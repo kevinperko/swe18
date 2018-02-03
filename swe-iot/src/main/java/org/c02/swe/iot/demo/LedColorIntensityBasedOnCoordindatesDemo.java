@@ -7,6 +7,8 @@ import org.c02.swe.iot.cloud.api.ParticleApi;
 
 import java.awt.*;
 
+import static org.c02.swe.iot.demo.LedColorsBasedOnCoordindatesDemo.bl;
+
 /**
  * Created by kevin.perko on 03.02.2018.
  */
@@ -29,21 +31,12 @@ public class LedColorIntensityBasedOnCoordindatesDemo {
 
                 for (int i = 0; i <= 12; i++) {
                     double xValue = bt.getXValue();
-                    bt.setLed(i, getColorBasedOnXValue(xValue));
+                    bt.setLed(i, bl.getColorBasedOnXValue(xValue));
                 }
             }
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private static Color getColorBasedOnXValue(double xValue) {
-
-        int xPosValue = (int)Math.abs(xValue)%255;
-
-        System.out.println("xPosValue: " + xPosValue);
-
-        return new Color(xPosValue, xPosValue, xPosValue);
     }
 }
