@@ -3,6 +3,7 @@ package org.c02.iot.behaviour.test;
 import org.c02.swe.iot.Button;
 import org.c02.swe.iot.IButton;
 import org.c02.swe.iot.cloud.api.IParticleApi;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -67,5 +68,19 @@ public class LedAPITests {
         //Verify
         verify(api).readVariable(button1String);
         verifyNoMoreInteractions(api);
+    }
+    @Test
+    public void shouldPlaySoundOn10Clicks() throws Exception {
+        //Setup
+        Button button = new Button(api);
+        int buttonClicks = 10;
+
+        //Execute
+
+        //Verify
+        if(buttonClicks == 10) {
+            verify(api).callMethod("play", null);
+            verifyNoMoreInteractions(api);
+        }
     }
 }
