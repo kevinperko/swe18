@@ -41,7 +41,7 @@ public class Button implements IButton {
 		{
 			tmpPosition = postition+"";
 		}
-		wrapper.callMethod("led", tmpPosition+color.getRGB());
+		wrapper.callMethod("led", tmpPosition+String.format("%03d", color.getRed())+String.format("%03d", color.getGreen())+String.format("%03d", color.getBlue()));
 	}
 
 	public void allLedsOff() throws ParticleException {
