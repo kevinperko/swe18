@@ -55,5 +55,4 @@ public class Button implements IButton {
 	public void resetButtonClickCounters() throws ParticleException {
 		wrapper.callMethod("reset",null);
 	}
-
 }

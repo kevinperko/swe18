@@ -40,6 +40,22 @@ public class LedAPITests {
     }
 
     @Test
+    public void shouldPlaySound() throws Exception {
+        Button button = new Button(api);
+        button.playSound();
+        verify(api).callMethod("play", null);
+        verifyNoMoreInteractions(api);
+    }
+
+    @Test
+    public void shouldResetButtonClickCounters() throws Exception {
+        Button button = new Button(api);
+        button.resetButtonClickCounters();
+        verify(api).callMethod("reset", null);
+        verifyNoMoreInteractions(api);
+    }
+
+    @Test
     public void shouldGetButtonClickCounterForDirectionNorth() throws Exception {
         //Setup
         Button button = new Button(api);
