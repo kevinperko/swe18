@@ -13,7 +13,7 @@ public class CountAndShowLed extends AbstractBehaviour {
 
 	@Override
 	public void run() {
-		int buttonCounter = button.getButtonClickCounter(ButtonDirection.North);
+		//int buttonCounter = button.getButtonClickCounter(ButtonDirection.North);
 		//button.setLed(buttonCounter, Color.GREEN);
 	}
 

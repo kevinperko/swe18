@@ -1,6 +1,5 @@
 package org.c02.swe.iot.demo;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import org.c02.swe.iot.Button;
 import org.c02.swe.iot.ButtonConnection;
 import org.c02.swe.iot.IButton;
@@ -19,9 +18,14 @@ public class ButtonCounterDemo {
 
     public static void main(String[] args) {
         try {
+
+            Button bt = new Button(api);
+
+            System.out.println("Appplication started...");
+
             while(true) {
 
-               Button bt = new Button(api);
+               System.out.println("Waiting 5 seconds for click input");
 
                int buttonClickCtnNorth = bt.getButtonClickCounter(IButton.ButtonDirection.North);
                int buttonClickCtnEast = bt.getButtonClickCounter(IButton.ButtonDirection.East);
@@ -38,8 +42,6 @@ public class ButtonCounterDemo {
 
                //print total clicks
                System.out.println("Total clicks: " + buttonClickTotal);
-
-               Thread.sleep(5000);
 
                bt.resetButtonClickCounters();
 

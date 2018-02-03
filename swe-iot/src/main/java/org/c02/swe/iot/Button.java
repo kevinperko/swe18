@@ -1,9 +1,9 @@
 package org.c02.swe.iot;
 
 import java.awt.Color;
+import java.io.IOException;
 
 import org.c02.swe.iot.cloud.api.IParticleApi;
-import org.c02.swe.iot.cloud.api.ParticleApi;
 import org.c02.swe.iot.cloud.api.ParticleException;
 
 public class Button implements IButton {
@@ -14,9 +14,16 @@ public class Button implements IButton {
 		wrapper = wrapperInstance;
 	}
 
-	public int getButtonClickCounter(ButtonDirection button) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getButtonClickCounter(ButtonDirection button) throws IOException {
+		String curButton = "";
+		switch(button)
+		{
+			case North: curButton = "countButton1";break;
+			case South: curButton = "countButton2";break;
+			case East: curButton = "countButton3";break;
+			case West: curButton = "countButton4";break;
+		}
+		return wrapper.readVariable(curButton);
 	}
 
 	public void setLed(int postition, Color color) throws ParticleException {
@@ -24,7 +31,7 @@ public class Button implements IButton {
 		// rrr = rot
 		// ggg = grün
 		// bbb = blau
-				// nnrrrgggbbb
+		// nnrrrgggbbb
 		String tmpPosition;
 		if(postition<10)
 		{
@@ -34,7 +41,7 @@ public class Button implements IButton {
 		{
 			tmpPosition = postition+"";
 		}
-		wrapper.callMethod("led", tmpPosition+color.getRGB()); 
+		wrapper.callMethod("led", tmpPosition+color.getRGB());
 	}
 
 	public void allLedsOff() throws ParticleException {
@@ -45,9 +52,8 @@ public class Button implements IButton {
 		wrapper.callMethod("play", null);
 	}
 
-	public void resetButtonClickCounters() {
-		// TODO Auto-generated method stub
-		
+	public void resetButtonClickCounters() throws ParticleException {
+		wrapper.callMethod("reset",null);
 	}
 
 }
