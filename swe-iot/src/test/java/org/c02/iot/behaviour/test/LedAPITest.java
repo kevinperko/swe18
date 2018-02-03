@@ -69,4 +69,18 @@ public class LedAPITest {
         verify(api).readVariable(button1String);
         verifyNoMoreInteractions(api);
     }
+    
+    @Test
+    public void shouldPlaySoundOn10Clicks() throws Exception {
+        //Setup
+        Button button = new Button(api);
+        int buttonClicks = 10;
+        //Execute
+        button.playSound();
+        //Verify
+        if(buttonClicks == 10) {
+            verify(api).callMethod("play", null);
+            verifyNoMoreInteractions(api);
+        }
+    }
 }
