@@ -19,8 +19,22 @@ public class Button implements IButton {
 		return 0;
 	}
 
-	public void setLed(int postition, Color color) {
-		// TODO Auto-generated method stub
+	public void setLed(int postition, Color color) throws ParticleException {
+		// nn = Position 01-12
+		// rrr = rot
+		// ggg = grün
+		// bbb = blau
+				// nnrrrgggbbb
+		String tmpPosition;
+		if(postition<10)
+		{
+			tmpPosition = "0"+postition;
+		}
+		else
+		{
+			tmpPosition = postition+"";
+		}
+		wrapper.callMethod("led", tmpPosition+color.getRGB()); 
 	}
 
 	public void allLedsOff() throws ParticleException {

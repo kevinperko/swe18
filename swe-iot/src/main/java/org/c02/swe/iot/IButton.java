@@ -16,7 +16,7 @@ public interface IButton {
 	
 	void resetButtonClickCounters();
 	
-	void setLed(int postition, Color color);
+	void setLed(int postition, Color color) throws ParticleException;
 	
 	void allLedsOff() throws ParticleException;
 	

@@ -16,8 +16,7 @@ public class LedButtonAPIDemo {
 	public static void main(String[] args) throws IOException {
 
 		IButton button = new Button(api);
-		button.setLed(2, Color.ORANGE);
-		
+		//button.setLed(2, Color.ORANGE);
 	}
 
 }
