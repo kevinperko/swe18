@@ -22,4 +22,10 @@ public interface IButton {
 	void allLedsOff() throws ParticleException;
 	
 	void playSound() throws ParticleException;
+
+	double getXValue() throws IOException;
+
+	double getYValue() throws IOException;
+
+	double getZValue() throws IOException;
 }

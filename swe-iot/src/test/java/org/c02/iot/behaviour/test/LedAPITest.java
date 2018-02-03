@@ -78,9 +78,25 @@ public class LedAPITest {
         //Execute
         button.playSound();
         //Verify
-        if(buttonClicks == 10) {
+        if (buttonClicks == 10) {
             verify(api).callMethod("play", null);
             verifyNoMoreInteractions(api);
         }
     }
+
+    @Test
+    public void shouldReadXValue() throws Exception {
+       //Setup
+        Button button = new Button(api);
+        String xValueString = "xValue";
+
+        //Execute
+        button.getXValue();
+
+        //Verify
+        verify(api).readVariable(xValueString);
+        verifyNoMoreInteractions(api);
+
+    }
+
 }

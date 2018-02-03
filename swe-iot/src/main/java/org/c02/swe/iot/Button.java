@@ -55,4 +55,19 @@ public class Button implements IButton {
 	public void resetButtonClickCounters() throws ParticleException {
 		wrapper.callMethod("reset",null);
 	}
+
+	@Override
+	public double getXValue() throws IOException {
+		return wrapper.readVariable("xValue");
+	}
+
+	@Override
+	public double getYValue() throws IOException {
+		return wrapper.readVariable("yValue");
+	}
+
+	@Override
+	public double getZValue() throws IOException {
+		return wrapper.readVariable("zValue");
+	}
 }
