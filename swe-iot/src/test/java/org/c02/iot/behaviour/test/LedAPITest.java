@@ -11,6 +11,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.awt.*;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 
@@ -18,7 +19,7 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
  * Created by kevin.perko on 03.02.2018.
  */
 @RunWith(MockitoJUnitRunner.class)
-public class LedAPITests {
+public class LedAPITest {
 
     @Mock
     private IParticleApi api;
