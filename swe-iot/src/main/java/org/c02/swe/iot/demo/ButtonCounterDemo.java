@@ -1,6 +1,5 @@
 package org.c02.swe.iot.demo;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import org.c02.swe.iot.Button;
 import org.c02.swe.iot.ButtonConnection;
 import org.c02.swe.iot.IButton;
