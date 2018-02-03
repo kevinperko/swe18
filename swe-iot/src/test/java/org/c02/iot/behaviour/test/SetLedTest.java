@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class SetLedTest {
 	@Test
-	public void testBehaviour() {
+	public void testSetLedBehaviour() {
 
 		IButton buttonInstance = new IButton() {
 
