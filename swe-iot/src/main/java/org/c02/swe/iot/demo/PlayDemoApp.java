@@ -15,11 +15,17 @@ public class PlayDemoApp {
 
     static IParticleApi api = new ParticleApi(new ButtonConnection());
 
-    public static void main(String[] args) throws IOException, ParticleException {
-
-        Button bt = new Button(api);
-        bt.playSound();
-
+    public static void main(String[] args) {
+        try {
+            Button bt = new Button(api);
+            bt.playSound();
+        }
+        catch (ParticleException pex) {
+            pex.printStackTrace();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
