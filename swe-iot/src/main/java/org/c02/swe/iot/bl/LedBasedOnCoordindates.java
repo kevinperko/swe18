@@ -25,10 +25,6 @@ public class LedBasedOnCoordindates {
         int yPosValue = (yValue <0)?0:(int)yValue%255;
         int zPosValue = (zValue <0)?0:(int)zValue%255;
 
-        System.out.println("xPosValue: " + xPosValue);
-        System.out.println("yPosValue: " + yPosValue);
-        System.out.println("zPosValue: " + zPosValue);
-
         return new Color(xPosValue, yPosValue, zPosValue);
     }
 }
